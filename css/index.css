@@ -1,0 +1,81 @@
+.container{
+    padding-top: 30px;
+}
+
+#upload-form{
+    margin: 30px auto;
+    display: table;
+}
+
+.progress{
+    margin: 30px auto;
+    width: 800px;
+}
+
+.progress-bar{
+    width: 0%;
+}
+
+#youtube-url-input{
+    margin-bottom: 20px;
+}
+
+#youtube-url-input input{
+    width: 400px;
+    margin-left: 20px;
+}
+
+#file{
+    display: none;
+    margin-bottom: 20px;
+}
+
+.spinner-border{
+    display: none;
+}
+
+#btn-upload{
+    cursor: pointer;
+}
+
+#btn-goback{
+    display: none;
+}
+
+#subclip-block{
+    display: table;
+    width: 100%;
+}
+
+.subclip-div{
+    display: table;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.subclip-text{
+    /* float: left; */
+    margin-left: 20px;
+    /* width: 60%; */
+}
+
+.subclip{
+    float: left;
+}
+
+.subclip-rightsubblock{
+    float: left;
+    width: 65%;
+    margin-left: 20px;
+    display: table;
+}
+
+.waveforms{
+    /* width: 65%; */
+    /* margin-left: 20px; */
+    /* display: table; */
+}
+
+#main-video-block{
+    margin-top: 30px;
+}

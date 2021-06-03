@@ -1,0 +1,25 @@
+# compute-mfcc-feats --verbose=2 --config=/media/ponddy/DATA/video_transcript_web_3.0/wordbased_asr/conf/mfcc_hires.conf scp,p:/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/log/wav_audio.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/raw_mfcc_audio.1.ark,/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/raw_mfcc_audio.1.scp 
+# Started at Wed May 22 10:32:11 PDT 2019
+#
+copy-feats --compress=true ark:- ark,scp:/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/raw_mfcc_audio.1.ark,/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/raw_mfcc_audio.1.scp 
+compute-mfcc-feats --verbose=2 --config=/media/ponddy/DATA/video_transcript_web_3.0/wordbased_asr/conf/mfcc_hires.conf scp,p:/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/log/wav_audio.1.scp ark:- 
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0000
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0001
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0002
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0003
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0004
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0005
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0006
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0007
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0008
+LOG (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:172) Processed 10 utterances
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0009
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0010
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0011
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0012
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0013
+VLOG[2] (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:173) Processed features for key 107_hobbies_1558546313436_0014
+LOG (compute-mfcc-feats[5.5.152~1-78f0]:main():compute-mfcc-feats.cc:176)  Done 15 out of 15 utterances.
+LOG (copy-feats[5.5.152~1-78f0]:main():copy-feats.cc:143) Copied 15 feature matrices.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Wed May 22 10:32:11 PDT 2019, elapsed time 0 seconds

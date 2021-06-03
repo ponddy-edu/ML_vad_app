@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Video Transcription System</title>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.bundle.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/wavesurfer.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
+    <script type="text/javascript" src="scripts/wavesurfer.regions.js"></script>
+    <!-- <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.js"></script> -->
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script>
+        function updateRange(name, val) {
+            var id = name + "_text";
+            //console.log(id);
+            document.getElementById(id).textContent=val; 
+        }
+
+        function updateVideoMode(id) {
+            if(id == "video-mode-input-youtube"){
+                $("#youtube-url-input").css("display", "table");
+                $("#file").css("display", "none");
+            }
+            else{
+                $("#youtube-url-input").css("display", "none");
+                $("#file").css("display", "table");
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <form id = "upload-form" method=post enctype=multipart/form-data>
+            <p>Input video mode: <br>
+                <input id="video-mode-input-youtube" type="radio" name="video_mode" value="0" oninput="updateVideoMode(this.id); " checked> Youtube video
+                <input id="video-mode-input-upload" type="radio" name="video_mode" value="1" oninput="updateVideoMode(this.id); "> Upload video<br>
+            <div id="youtube-url-input">Youtube video url:<input type="text" name="youtube-url"></div>
+            <input id="file" type="file" name="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+            <!-- <label for="file" class="btn btn-default" id="file-label"><span>Choose a file!</span></label> -->
+            <p>Voice Activity Detection Model: <br>
+                <input type="radio" name="model" value="0" checked> ACAM (Adaptive Context Attention Model)<br>
+                <input type="radio" name="model" value="1"> bDNN (boosted DNN)<br>
+                <input type="radio" name="model" value="2"> DNN<br>
+                <input type="radio" name="model" value="3"> LSTM<br>
+            <p>Voice energy threshold (min: 0.1, max: 0.5):
+                <input type="range" name="voice_threshold" min="0.1" max="0.5" step="0.1" value="0.4" oninput="updateRange(this.name, this.value); ">
+                <span id="voice_threshold_text">0.4</span>
+            <p>Silence duration threshold (min: 0.1 sec, max: 0.5 sec):
+                <input type="range" name="sil_duration_threshold" min="0.1" max="0.5" step="0.1" value="0.1" oninput="updateRange(this.name, this. value);">
+                <span id="sil_duration_threshold_text">0.1</span>
+            <p>Voice duration threshold (min: 0.1 sec, max: 0.5 sec):
+                <input type="range" name="voice_duration_threshold" min="0.1" max="0.5" step="0.1" value="0.3" oninput="updateRange(this.name,     this.value);">
+                <span id="voice_duration_threshold_text">0.3</span>
+            <div class="btn btn-danger" id="btn-upload">
+                Submit
+            </div>
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </form>
+        <!-- <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                0% Complete
+            </div>
+        </div> -->
+        <button type="button" class="btn btn-success" id="btn-goback">Go back</button>
+        <div id="waveform"></div>
+        <!-- <button class="btn btn-primary">
+            Play/Pause
+        </button> -->
+        <div id="main-video-block"></div>
+        <div id="subclip-block"></div>
+    </div>
+</body>
+</html>

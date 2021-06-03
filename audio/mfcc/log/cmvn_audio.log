@@ -1,0 +1,2 @@
+compute-cmvn-stats --spk2utt=ark:/media/ponddy/DATA/video_transcript_web_3.0/audio/spk2utt scp:/media/ponddy/DATA/video_transcript_web_3.0/audio/feats.scp ark,scp:/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/cmvn_audio.ark,/media/ponddy/DATA/video_transcript_web_3.0/audio/mfcc/features/cmvn_audio.scp 
+LOG (compute-cmvn-stats[5.5.152~1-78f0]:main():compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 15 utterances; 0 had errors.
